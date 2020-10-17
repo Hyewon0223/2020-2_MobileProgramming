@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_subject">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/LinearLayout_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="92dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/textView_subject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Product"
+                    android:textAllCaps="false"
+                    android:textColor="#9C27B0"
+                    android:textColorHint="#673AB7"
+                    android:textIsSelectable="false"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_FILA"
+                android:layout_width="412dp"
+                android:layout_height="203dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBox_FILA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[FILA]펑키테니스 1998" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_FILA_ex"
+                    android:layout_width="402dp"
+                    android:layout_height="169dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView_FILA"
+                        android:layout_width="172dp"
+                        android:layout_height="169dp"
+                        app:srcCompat="@drawable/fila" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_FILA_text"
+                        android:layout_width="227dp"
+                        android:layout_height="167dp"
+                        android:orientation="vertical">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="21dp" />
+
+                        <TextView
+                            android:id="@+id/textView_FILA_product"
+                            android:layout_width="217dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="- 1TM00622_100" />
+
+                        <TextView
+                            android:id="@+id/textView_FILA_price"
+                            android:layout_width="227dp"
+                            android:layout_height="15dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="- \59,000" />
+
+                        <TextView
+                            android:id="@+id/textView_FILA_explain"
+                            android:layout_width="212dp"
+                            android:layout_height="81dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="프로파일이 높고 앞코가 둥근 쉐입으로 전체적으로 귀여운 실루엣 연출이 가능한 제품" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_NIKE"
+                android:layout_width="407dp"
+                android:layout_height="197dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBox_NIKE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[나이키]나이키 클래식 코르테즈" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_NIKE_ex"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView_NIKE"
+                        android:layout_width="158dp"
+                        android:layout_height="160dp"
+                        app:srcCompat="@drawable/nike" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_NIKE_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="29dp" />
+
+                        <TextView
+                            android:id="@+id/textView_NIKE_product"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="- 807471-101" />
+
+                        <TextView
+                            android:id="@+id/textView_NIKE_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="- \99,000" />
+
+                        <TextView
+                            android:id="@+id/textView_NIKE_explain"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="천연 가죽과 인조 가죽을 결합한 구조로 더욱 우수한 내구성을 자랑하는 제품" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_CON"
+                android:layout_width="405dp"
+                android:layout_height="202dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBox_CON"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[CONVERSE]척테일러 올스타 클래식" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_CON_ex"
+                    android:layout_width="match_parent"
+                    android:layout_height="163dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView_CON"
+                        android:layout_width="163dp"
+                        android:layout_height="158dp"
+                        app:srcCompat="@drawable/converse" />
+
+                    <LinearLayout
+                        android:layout_width="229dp"
+                        android:layout_height="172dp"
+                        android:orientation="vertical">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp" />
+
+                        <TextView
+                            android:id="@+id/textView_CON_product"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="- M7652C" />
+
+                        <TextView
+                            android:id="@+id/textView_CON_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="- \55,000" />
+
+                        <TextView
+                            android:id="@+id/textView_CON_explain"
+                            android:layout_width="match_parent"
+                            android:layout_height="81dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="- 가볍고 견고한 캔버스 어퍼 / 시즌리스, 타임리스한 실루엣 / 클래식 앵클 패치 / 스타일의 포인트를 더하는 다양한 컬러웨이" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_Button"
+                android:layout_width="408dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CART" />
+
+                <Button
+                    android:id="@+id/button_buy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="BUY NOW" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
