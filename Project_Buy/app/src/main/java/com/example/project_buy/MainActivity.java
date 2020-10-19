@@ -44,9 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 String[] DATA = TrimData();
                 if (DATA == null) Toast.makeText(getApplicationContext(), "선택사항이 없습니다.", Toast.LENGTH_LONG).show();
                 else {
-                    Intent myintent = new Intent(MainActivity.this, CartActivity.class);
                     Toast.makeText(getApplicationContext(), "장바구니 페이지", Toast.LENGTH_LONG).show();
-                    startActivity(myintent);
 
                     Intent infointent = new Intent(MainActivity.this, CartActivity.class);
                     infointent.putExtra("data", DATA);

@@ -34,9 +34,6 @@ public class BuyActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        final String[] productName = {"[FILA]펑키테니스 1998","[나이키]나이키 클래식 코르테즈", "[CONVERSE]척테일러 올스타 클래식"};
-        final String[] productPrice = {"59000", "99000", "55000"};
-
         final TextView txt1 = (TextView) findViewById(R.id.textView_buy1);
         final TextView txt2 = (TextView) findViewById(R.id.textView_buy2);
         final TextView txt3 = (TextView) findViewById(R.id.textView_buy3);

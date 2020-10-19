@@ -21,7 +21,6 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
 
         final String[] productName = {"[FILA]펑키테니스 1998","[나이키]나이키 클래식 코르테즈", "[CONVERSE]척테일러 올스타 클래식"};
-        final String[] productPrice = {"59000", "99000", "55000"};
 
         final TextView tx1 = (TextView) findViewById(R.id.textView_cart1);
         final TextView tx2 = (TextView) findViewById(R.id.textView_cart2);
@@ -67,22 +66,22 @@ public class CartActivity extends AppCompatActivity {
         buypage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String product = "";
-                for (int i = 0; i < check.length; i++) {
-                    if (check[i].isChecked()) {
-                        String text = txt_name[i].getText().toString();
-                        product += text + "&";
-                    }
+            String product = "";
+            for (int i = 0; i < check.length; i++) {
+                if (check[i].isChecked()) {
+                    String text = txt_name[i].getText().toString();
+                    product += text + "&";
                 }
-                String[] checkProduct = product.split("&");
-                if (checkProduct == null) Toast.makeText(getApplicationContext(), "선택사항이 없습니다.", Toast.LENGTH_LONG).show();
-                else {
-                    Toast.makeText(getApplicationContext(), "구매 페이지", Toast.LENGTH_LONG).show();
+            }
+            String[] checkProduct = product.split("&");
+            if (checkProduct == null) Toast.makeText(getApplicationContext(), "선택사항이 없습니다.", Toast.LENGTH_LONG).show();
+            else {
+                Toast.makeText(getApplicationContext(), "구매 페이지", Toast.LENGTH_LONG).show();
 
-                    Intent infointent = new Intent(CartActivity.this, BuyActivity.class);
-                    infointent.putExtra("data", checkProduct);
-                    startActivity(infointent);
-                }
+                Intent infointent = new Intent(CartActivity.this, BuyActivity.class);
+                infointent.putExtra("data", checkProduct);
+                startActivity(infointent);
+            }
             }
         });
     }
