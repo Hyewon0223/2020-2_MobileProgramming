@@ -3,6 +3,7 @@ package com.example.project_buy;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -60,73 +61,82 @@ public class BuyActivity extends AppCompatActivity {
         String[] data = dataintent.getStringArrayExtra("data");
         int sum = 0;
 
+
         for (int i=0;i<data.length;i++) {
             String[] select = data[i].split("/");
-            txt[i].setText(select[0]+"\t"+select[1]+"원");
-            sum += Integer.parseInt(select[1]);
+            String[] price = select[1].split("원");
+            txt[i].setText(select[0]+"/"+price[0]+"원");
+            sum += Integer.parseInt(price[0]);
         }
-        txt_sum.setText("구매 합계는 "+sum+"원 입니다.");
+        txt_sum.setText("구매 합계 : "+sum+"원");
 
         Button completepage = (Button)findViewById(R.id.button_complete);
         completepage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"상품 페이지", Toast.LENGTH_LONG).show();
-                Intent myintent = new Intent(BuyActivity.this, MainActivity.class);
-
                 String editTextPhone = editPhone.getText().toString();
                 String editTextAddress = editAddress.getText().toString();
+                String userId = editTextPhone;
 
-                HashMap result =  new HashMap<>();
-                result.put("phone", editTextPhone);
-                result.put("address", editTextAddress);
+                if (editTextPhone.length() == 0){
+                    Toast.makeText(getApplicationContext(),"PHONE 정보를 입력하세요.", Toast.LENGTH_LONG).show();
+                }
+                else if (editTextAddress.length() == 0){
+                    Toast.makeText(getApplicationContext(),"ADDRESS 정보를 입력하세요.", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"구매 완료", Toast.LENGTH_LONG).show();
+                    Intent myintent = new Intent(BuyActivity.this, MainActivity.class);
+                    HashMap result = new HashMap<>();
+                    result.put("phone", editTextPhone);
+                    result.put("address", editTextAddress);
 
-                writeNewUser("1", editTextPhone, editTextAddress);
+                    writeNewUser(userId, editTextPhone, editTextAddress);
 
-                startActivity(myintent);
-                finish();
-            }
-        });
-    }
-
-    private void writeNewUser(String userId, String phonenumber, String address) {
-        User user = new User(phonenumber, address);
-
-        mDatabase.child("users").child(userId).setValue(user)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        // Write was successful!
-                        Toast.makeText(BuyActivity.this, "저장을 완료했습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        // Write failed
-                        Toast.makeText(BuyActivity.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-    }
-
-    private void readUser(){
-        mDatabase.child("users").child("1").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                if(dataSnapshot.getValue(User.class) != null){
-                    User post = dataSnapshot.getValue(User.class);
-                    Log.w("FireBaseData", "getData" + post.toString());
-                } else {
-                    Toast.makeText(BuyActivity.this, "데이터 없음...", Toast.LENGTH_SHORT).show();
+                    startActivity(myintent);
+                    finish();
                 }
             }
+            private void writeNewUser(String userId, String phonenumber, String address) {
+                User user = new User(phonenumber, address);
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w("FireBaseData", "loadPost:onCancelled", databaseError.toException());
+                mDatabase.child("users").child(userId).setValue(user)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                // Write was successful!
+                                Toast.makeText(BuyActivity.this, "저장을 완료했습니다.", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Write failed
+                                Toast.makeText(BuyActivity.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+
+            private void readUser(){
+                String userId = editPhone.getText().toString();
+                mDatabase.child("users").child(userId).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        // Get Post object and use the values to update the UI
+                        if(dataSnapshot.getValue(User.class) != null){
+                            User post = dataSnapshot.getValue(User.class);
+                            Log.w("FireBaseData", "getData" + post.toString());
+                        } else {
+                            Toast.makeText(BuyActivity.this, "데이터 없음...", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        // Getting Post failed, log a message
+                        Log.w("FireBaseData", "loadPost:onCancelled", databaseError.toException());
+                    }
+                });
             }
         });
     }

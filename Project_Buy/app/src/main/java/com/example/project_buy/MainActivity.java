@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 if (DATA == null) Toast.makeText(getApplicationContext(), "선택사항이 없습니다.", Toast.LENGTH_LONG).show();
                 else {
                     Toast.makeText(getApplicationContext(), "구매 페이지", Toast.LENGTH_LONG).show();
-                    Intent myintent = new Intent(MainActivity.this, BuyActivity.class);
-                    startActivity(myintent);
+
+                    //System.out.println("buypage");
 
                     Intent infointent = new Intent(MainActivity.this, BuyActivity.class);
                     infointent.putExtra("data", DATA);

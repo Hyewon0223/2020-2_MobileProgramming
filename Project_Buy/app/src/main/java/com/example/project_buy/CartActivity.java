@@ -36,7 +36,6 @@ public class CartActivity extends AppCompatActivity {
         final ImageView image2 = (ImageView) findViewById(R.id.imageView2);
         final ImageView image3 = (ImageView) findViewById(R.id.imageView3);
 
-        //final CheckBox ch = (CheckBox) findViewById(R.id.checkBox_all);
         final CheckBox ch1 = (CheckBox) findViewById(R.id.checkBox_cart1);
         final CheckBox ch2 = (CheckBox) findViewById(R.id.checkBox_cart2);
         final CheckBox ch3 = (CheckBox) findViewById(R.id.checkBox_cart3);
@@ -48,18 +47,6 @@ public class CartActivity extends AppCompatActivity {
         Intent dataintent = getIntent();
         String[] data = dataintent.getStringArrayExtra("data");
 
-//        if (ch.isChecked()){
-//            for (int i=0;i<check.length;i++){
-//                check[i].setChecked(true);
-//            }
-//        }
-//
-//        if (!ch.isChecked()){
-//            for (int i=0;i<check.length;i++){
-//                check[i].setChecked(false);
-//            }
-//        }
-
         for (int i=0;i<data.length;i++) {
             String[] select = data[i].split("/");
             if (select[0].equals(productName[0])) img[i].setImageResource(R.drawable.fila);
@@ -67,7 +54,7 @@ public class CartActivity extends AppCompatActivity {
             else if (select[0].equals(productName[2])) img[i].setImageResource(R.drawable.converse);
             check[i].setVisibility(View.VISIBLE);
             check[i].setChecked(true);
-            txt_name[i].setText(select[0]+"\n\n"+select[1]+"원");
+            txt_name[i].setText(select[0]+"/"+select[1]+"원");
         }
 
         Button homepage = (Button) findViewById(R.id.button_home);
@@ -96,8 +83,6 @@ public class CartActivity extends AppCompatActivity {
                 if (checkProduct == null) Toast.makeText(getApplicationContext(), "선택사항이 없습니다.", Toast.LENGTH_LONG).show();
                 else {
                     Toast.makeText(getApplicationContext(), "구매 페이지", Toast.LENGTH_LONG).show();
-                    Intent myintent = new Intent(CartActivity.this, BuyActivity.class);
-                    startActivity(myintent);
 
                     Intent infointent = new Intent(CartActivity.this, BuyActivity.class);
                     infointent.putExtra("data", checkProduct);

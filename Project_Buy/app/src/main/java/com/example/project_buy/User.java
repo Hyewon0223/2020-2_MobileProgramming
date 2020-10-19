@@ -9,8 +9,8 @@ public class User {
     public String address;
 
     public User() {
-        this.phonenumber = "010-3192-9447";
-        this.address = "seoul";
+        this.phonenumber = "";
+        this.address = "";
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
@@ -27,19 +27,19 @@ public class User {
         this.phonenumber = phonenumber;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "phonenumber='" + phonenumber + '\'' +
-                ", address='" + address + '\'' +
+                "phonenumber=" + phonenumber + '\'' +
+                ", address=" + address + '\'' +
                 '}';
     }
 }
