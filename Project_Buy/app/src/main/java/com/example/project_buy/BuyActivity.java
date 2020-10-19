@@ -26,7 +26,7 @@ import java.util.HashMap;
 public class BuyActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;// ...
-
+    String data_product = "";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,10 +51,10 @@ public class BuyActivity extends AppCompatActivity {
         String[] data = dataintent.getStringArrayExtra("data");
         int sum = 0;
 
-
         for (int i=0;i<data.length;i++) {
             String[] select = data[i].split("/");
             String[] price = select[1].split("원");
+            data_product += select[0] + "/";
             txt[i].setText(select[0]+"/"+price[0]+"원");
             sum += Integer.parseInt(price[0]);
         }
@@ -80,15 +80,16 @@ public class BuyActivity extends AppCompatActivity {
                     HashMap result = new HashMap<>();
                     result.put("phone", editTextPhone);
                     result.put("address", editTextAddress);
+                    result.put("product", data_product);
 
-                    writeNewUser(userId, editTextPhone, editTextAddress);
+                    writeNewUser(userId, editTextPhone, editTextAddress, data_product);
 
                     startActivity(myintent);
                     finish();
                 }
             }
-            private void writeNewUser(String userId, String phonenumber, String address) {
-                User user = new User(phonenumber, address);
+            private void writeNewUser(String userId, String phonenumber, String address, String product) {
+                User user = new User(phonenumber, address, product);
 
                 mDatabase.child("users").child(userId).setValue(user)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
