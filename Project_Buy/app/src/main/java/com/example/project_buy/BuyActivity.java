@@ -1,16 +1,11 @@
 package com.example.project_buy;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,10 +37,6 @@ public class BuyActivity extends AppCompatActivity {
         final String[] productName = {"[FILA]펑키테니스 1998","[나이키]나이키 클래식 코르테즈", "[CONVERSE]척테일러 올스타 클래식"};
         final String[] productPrice = {"59000", "99000", "55000"};
 
-//        final ImageView img1 = (ImageView) findViewById(R.id.imageView_buy1);
-//        final ImageView img2 = (ImageView) findViewById(R.id.imageView_buy2);
-//        final ImageView img3 = (ImageView) findViewById(R.id.imageView_buy3);
-
         final TextView txt1 = (TextView) findViewById(R.id.textView_buy1);
         final TextView txt2 = (TextView) findViewById(R.id.textView_buy2);
         final TextView txt3 = (TextView) findViewById(R.id.textView_buy3);
@@ -54,7 +45,6 @@ public class BuyActivity extends AppCompatActivity {
         final EditText editPhone = (EditText) findViewById(R.id.editTextPhone);
         final EditText editAddress = (EditText) findViewById(R.id.editTextTextPostalAddress);
 
-//        final ImageView[] img = {img1, img2, img3};
         final TextView[] txt = {txt1, txt2, txt3};
 
         Intent dataintent = getIntent();

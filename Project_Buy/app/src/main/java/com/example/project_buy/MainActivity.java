@@ -2,13 +2,11 @@ package com.example.project_buy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -66,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 if (DATA == null) Toast.makeText(getApplicationContext(), "선택사항이 없습니다.", Toast.LENGTH_LONG).show();
                 else {
                     Toast.makeText(getApplicationContext(), "구매 페이지", Toast.LENGTH_LONG).show();
-
-                    //System.out.println("buypage");
 
                     Intent infointent = new Intent(MainActivity.this, BuyActivity.class);
                     infointent.putExtra("data", DATA);
