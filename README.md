@@ -22,29 +22,29 @@
 #### > 기본 화면
 1. 상품 선택 화면
 - 기본 화면   
-<img src="/img/선택 화면.png" width="40%" title="실행화면_선택화면" alt="Select Product"></img>
-<img src="/img/선택 화면2.png" width="40%" title="실행화면_선택화면2" alt="Select Product2"></img>   
+<img src="img/선택 화면.png" width="40%" title="실행화면_선택화면" alt="Select Product"></img>
+<img src="img/선택 화면2.png" width="40%" title="실행화면_선택화면2" alt="Select Product2"></img>   
    
 - 어떤 것도 체크 되어 있지 않을 경우   
-<img src="/img/NoCheck_Select.png" width="40%" title="실행화면_선택화면_NoCheck" alt="Select Product_NoCheck"></img>   
+<img src="img/NoCheck_Select.png" width="40%" title="실행화면_선택화면_NoCheck" alt="Select Product_NoCheck"></img>   
    
 2. 장바구니 화면
 - 기본 화면   
-<img src="/img/장바구니 화면.png" width="40%" title="실행화면_장바구니화면" alt="Cart"></img>
+<img src="img/장바구니 화면.png" width="40%" title="실행화면_장바구니화면" alt="Cart"></img>
    
 - 어떤 것도 체크 되어 있지 않을 경우   
-<img src="/img/NoCheck_Cart.png" width="40%" title="실행화면_장바구니_NoCheck" alt="Cart_NoCheck"></img>   
+<img src="img/NoCheck_Cart.png" width="40%" title="실행화면_장바구니_NoCheck" alt="Cart_NoCheck"></img>   
    
 3. 구매 화면
 - 기본 화면   
-<img src="/img/구매 화면.png" width="40%" title="실행화면_구매화면" alt="Purchase"></img>   
+<img src="img/구매 화면.png" width="40%" title="실행화면_구매화면" alt="Purchase"></img>   
    
 - PHONE 또는 ADDRESS 정보를 입력하지 않을 때   
-<img src="/img/NoData.png" width="40%" title="실행화면_구매화면_NoData" alt="Purechase_Nodata"></img>   
+<img src="img/NoData.png" width="40%" title="실행화면_구매화면_NoData" alt="Purechase_Nodata"></img>   
    
 - firebase 정보전달   
-<img src="/img/firebase1.png" width="70%" title="Firebase1" alt="firebase1"></img>
-<img src="/img/firebase2.png" width="70%" title="Firebase1" alt="firebase2"></img>
+<img src="img/firebase1.png" width="70%" title="Firebase1" alt="firebase1"></img>
+<img src="img/firebase2.png" width="70%" title="Firebase1" alt="firebase2"></img>
 ---
 ### 주요 코드 및 구현 내용 설명
 #### > 상품 선택 화면
