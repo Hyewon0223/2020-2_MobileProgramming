@@ -74,7 +74,7 @@ public class CartActivity extends AppCompatActivity {
                 }
             }
             String[] checkProduct = product.split("&");
-            if (checkProduct == null) Toast.makeText(getApplicationContext(), "선택사항이 없습니다.", Toast.LENGTH_LONG).show();
+            if (product.equals("")) Toast.makeText(getApplicationContext(), "선택사항이 없습니다.", Toast.LENGTH_LONG).show();
             else {
                 Toast.makeText(getApplicationContext(), "구매 페이지", Toast.LENGTH_LONG).show();
 
