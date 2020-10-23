@@ -72,6 +72,7 @@ public String[] TrimData(){
       product += productName[i] + "/" + productPrice[i] + "&"; // 상품명과 가격 사이에는 '/'로 구분, 상품과 상품 사이는 '&'로 구분
     }
   }
+  
   if (check==0) return null; // 받아온 정보가 없다면 정보를 보내지 않음
   String[] checkProduct = product.split("&"); // product를 &를 기준으로 분리해 checkProduct 배열에 저장
   return checkProduct; // checkProduct 배열 리턴
@@ -84,6 +85,7 @@ String[] DATA = TrimData();
 if (DATA == null) Toast.makeText(getApplicationContext(), "선택사항이 없습니다.", Toast.LENGTH_LONG).show(); //데이터가 없다면 보내지 않음
 else { // 그렇지 않으면 DATA 전달
   Toast.makeText(getApplicationContext(), "장바구니 페이지", Toast.LENGTH_LONG).show(); // 페이지를 이동할 때 Toast메시지를 이용해 "장바구니 페이지"라는 메시지 표시
+  
   Intent infointent = new Intent(MainActivity.this, CartActivity.class); // intent 객체를 생성
   infointent.putExtra("data", DATA); // intent에 부가 데이터 넣기
   startActivity(infointent); // 액티비티 띄우기
@@ -100,10 +102,12 @@ String[] data = dataintent.getStringArrayExtra("data");
 for (int i=0;i<data.length;i++) {
     // Ex ) data = {product1/price1, product2/price2}
     String[] select = data[i].split("/"); // data[i]의 상품과 가격을 분리해 select 배열에 저장
+    
     // productName 배열에서의 이름이 같다면, ImageView에 해당 사진 표시
     if (select[0].equals(productName[0])) img[i].setImageResource(R.drawable.fila);
     else if (select[0].equals(productName[1])) img[i].setImageResource(R.drawable.nike);
     else if (select[0].equals(productName[2])) img[i].setImageResource(R.drawable.converse);
+    
     check[i].setVisibility(View.VISIBLE); // 데이터의 수만큼 숨겨놓은 CheckBox를 화면에 표시
     check[i].setChecked(true); // 화면에 나타난 CheckBox에 check를 남김
     txt_name[i].setText(select[0]+"/"+select[1]+"원"); // textView에 상품과 가격을 표시
@@ -119,6 +123,7 @@ for (int i = 0; i < check.length; i++) {
         product += text + "&"; // product에 text와 상품 구분을 위한 &기호 더해줌
     }
 }
+
 String[] checkProduct = product.split("&"); // product에서 &기호를 기준으로 checkProduct에 분리함
 // product가 빈 스트링 이라면 선택 사항이 없다는 Toast메시지 출력
 if (product.equals("")) Toast.makeText(getApplicationContext(), "선택사항이 없습니다.", Toast.LENGTH_LONG).show();
@@ -143,6 +148,7 @@ for (int i=0;i<data.length;i++) {
     String[] select = data[i].split("/"); // select 배열에 data[i]를 /기준으로 분리해 넣음
     String[] price = select[1].split("원"); // price 배열에 select[1] (=price)를 "원"을 기준으로 분리해 넣음
     txt[i].setText(select[0]+"/"+price[0]+"원"); // textView에 상품명과 가격을 화면에 표시함
+    
     sum += Integer.parseInt(price[0]); // "원"을 분리한 가격(오로지 숫자)만을 숫자로 변환해 sum에 더해줌
 }
 txt_sum.setText("구매 합계 : "+sum+"원"); // 상품 가격의 총 합을 textView에 표시
@@ -167,6 +173,7 @@ else if (editTextAddress.length() == 0){ // 사용자가 ADDRESS 정보를 입�
 else {
     Toast.makeText(getApplicationContext(),"구매 완료", Toast.LENGTH_LONG).show(); // Toast 메시지로 "구매 완료"를 화면에 표시
     Intent myintent = new Intent(BuyActivity.this, MainActivity.class); // intent 생성
+    
     HashMap result = new HashMap<>(); // HashMap 생성
     // HashMap에 다음과 같은 값을 저장
     result.put("phone", editTextPhone);
