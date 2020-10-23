@@ -10,7 +10,7 @@
 #### > 정보
 - Project_info : 개인 과제 구현 내용 및 점수 등의 과제 설명
 - Product_info : Project_Buy의 상품 설명
-#### > JAVAㅁ
+#### > JAVA
 - MainActivity : 선택된 상품 정보 및 가격을 장바구니 또는 구매 화면에 전달
 - CartActivity : 선택 화면의 정보 받기 / 장바구니에서 선택된 상품 구매 화면으로 전달
 - BuyActivity : 선택 화면 또는 장바구니로부터 상품 정보 받기 / firebase로 정보 전달
