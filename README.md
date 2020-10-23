@@ -17,9 +17,19 @@
 - User : firebase에 담을 정보 정리  
   
 #### > Layout
-- activity_main.xml : [Relative Layout]상품 이름, 가격 및 정보 표시 / 장바구니 또는 바로 구매 버튼 선택 가능
-- activity_cart.xml : [Linear Layout]상품 선택 화면에서 check된 상품 표시 / HOME(상품 선택 화면) 또는 구매 버튼 선택 가능
-- activity_buy.xml : [Table Layout]상품 선택 화면 또는 장바구니에서 check된 상품 구매 / 전화번호, 주소 입력 / 구매 완료시 Select 화면으로 이동
+- activity_main.xml 
+  + Relative Layout으로 구성
+  + 상품 이름, 가격 및 정보 표시
+  + 장바구니 또는 바로 구매 버튼 선택 가능   
+- activity_cart.xml 
+  + Linear Layout으로 구성
+  + 상품 선택 화면에서 check된 상품 표시
+  + HOME(상품 선택 화면) 또는 구매 버튼 선택 가능   
+- activity_buy.xml 
+  + Table Layout으로 구성
+  + 상품 선택 화면 또는 장바구니에서 check된 상품 구매 
+  + 전화번호, 주소 입력 
+  + 구매 완료시 Select 화면으로 이동
 ---
 ### 실행 화면
 #### > 기본 화면
